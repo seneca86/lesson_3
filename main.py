@@ -48,3 +48,43 @@ divmod(10, 3)
 
 -3 ** 2
 (-3) ** 2
+
+int(True)
+int(False)
+bool(1)
+bool(0)
+
+int(4.3)
+int(1e3)
+
+int('100')
+int('1_2_3')
+
+3 + 2.0
+True + 1
+False + 1
+
+2
+2.0
+02.0
+2e2
+2e3
+2
+2.0
+02.0
+2e2
+2e3
+1_000.0
+
+float(True)
+float(False)
+float(10)
+float('8')
+float('-3.0')
+float('1e5')
+
+False + 0.0
+False + 0
+True + 0.0
+True + 0
+1 + 1.0

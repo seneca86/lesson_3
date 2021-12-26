@@ -119,4 +119,72 @@ Precedence rules can catch one by surprise, so one should either memorize preced
 -3 ** 2
 (-3) ** 2
 ```
+### Type conversions
 
+The `int()` function transforms other Python data types to integers. The behavior will be slightly different depending on the type of input. In the case of booleans, the behavior is the reverse of that of the function `bool()`.
+```python
+int(True)
+int(False)
+bool(1)
+bool(0)
+```
+
+In the case of floats, everything after the decimal point will be discarded:
+
+```python
+int(4.3)
+int(1e3)
+```
+
+`int()` is particularly useful to get the integer value from a text string, but it must contains only digits (else, it will fail):
+
+```python
+int('100')
+int('1_2_3')
+int('100 times') # this will fail
+int('3.14') # this will fail
+```
+
+Finally, if we mix numeric types among themselved or with booleans, Python will try to automatically convert them:
+```python
+3 + 2.0
+True + 1
+False + 1
+```
+Note how `True` and `False` are converted to `1` and `0`, respectively.
+
+## Floats
+
+Floats, also called _floating-point_ numbers, have decimal points. Python accepts the scientific notation when dealing with floats:
+
+```python
+2
+2.0
+02.0
+2e2
+2e3
+1_000.0
+```
+
+Floats are handled similarly to intergers with regard to the operators `+`, `-`, `*`, `/`, `//`, `**`, `%`, and `divmod()`.
+
+To convert other types of variables (including booleans, integers, strings containing integers or floats, etc.) to floats we can use the `float()` function
+
+```python
+float(True)
+float(False)
+float(10)
+float('8')
+float('-3.0')
+float('1e5')
+```
+
+As mentioned before, floats and integers can be mixed, with the result being a float. Same thing happens when mixing floats and booleans.
+
+```python
+False + 0.0
+False + 0
+True + 0.0
+True + 0
+1 + 1.0
+```
